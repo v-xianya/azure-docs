@@ -79,7 +79,7 @@ For premium storage accounts, soft-deleted snapshots do not count toward the per
 
 You can restore soft-deleted blobs by calling the [Undelete Blob](/rest/api/storageservices/undelete-blob) operation within the retention period. The **Undelete Blob** operation restores a blob and any soft-deleted snapshots associated with it. Any snapshots that were deleted during the retention period are restored.
 
-Calling **Undelete Blob** on a blob that is not soft-deleted will restore any soft-deleted snapshots that are associated with the blob. If the blob has no snapshots and is not soft-deleted, then calling **Undelete Blob** has no effect.
+Calling **Undelete Blob** on a blob that is soft-deleted will restore any soft-deleted snapshots that are associated with the blob. If the blob has no snapshots and is not soft-deleted, then calling **Undelete Blob** has no effect.
 
 To promote a soft-deleted snapshot to the base blob, first call **Undelete Blob** on the base blob to restore the blob and its snapshots. Next, copy the desired snapshot over the base blob. You can also copy the snapshot to a new blob.
 
